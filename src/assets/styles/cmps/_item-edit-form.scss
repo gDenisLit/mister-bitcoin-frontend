@@ -1,0 +1,21 @@
+.item-edit {
+    max-width: rem(600px);
+    label {
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto-Regular;
+        font-weight: 700;
+        font-size: rem(18px);
+        margin-block-end: rem(20px);
+
+        span {
+            margin-block-end: rem(5px);
+        }
+    }
+
+    input, textarea {
+        border: 1px solid $light-color5;
+        border-radius: rem(3px);
+        padding: rem(5px);
+    }
+}
