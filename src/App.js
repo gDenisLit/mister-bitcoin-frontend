@@ -1,6 +1,13 @@
+import { RouterView } from "./pages/RouterView"
+import { AppHeader } from "./cmps/AppHeader"
+
 function App() {
   return (
-    <h1>Hello React!</h1>
+    <>
+      <AppHeader />
+      <h1>Hello React!</h1>
+      <RouterView />
+    </>
   )
 }
 

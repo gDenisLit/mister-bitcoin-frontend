@@ -34,7 +34,7 @@
                 position: initial;
                 transform: translateY(0);
                 height: auto;
-                width: 30%;
+                // width: 30%;
             }
 
             .nav {
@@ -66,12 +66,10 @@
                 }
 
                 .header-link {
-                    font-family: Roboto-Regular;
                     color: $dark-color2;
                     font-size: rem(24px);
                     cursor: pointer;
-                    margin-block-end: rem(30px);
-
+                    // margin-block-end: rem(30px);
 
                     @include for-medium-layout {
                         color: $light-color;
