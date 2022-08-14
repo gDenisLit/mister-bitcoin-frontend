@@ -5,29 +5,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export class AppHeader extends Component {
 
     state = {
-        currPageIdx: 0,
         loggedInUser: null,
         isMenuOpen: false
     }
 
     toggleMenu() {
         this.setState((prevState) => {
-            return {isMenuOpen: !prevState.isMenuOpen}
+            return { isMenuOpen: !prevState.isMenuOpen }
         })
     }
 
-    setActive(pageIdx) {
-        this.setState({ currPageIdx: pageIdx })
+    onSetPageIdx(pageIdx) {
+        this.props.setPageIdx(pageIdx)
         this.toggleMenu()
     }
 
     render() {
         const links = utilService.getHeaderLinks()
+        const { currPageIdx } = this.props
         return (
             <header className="app-header main-layout full">
                 <section className="app-header__inner flex justify-between items-center">
 
-                    <div className="logo-wrapper" onClick={() => this.setActive(0)}>
+                    <div className="logo-wrapper" onClick={() => this.onSetPageIdx(0)}>
                         {/* <img src="" alt="LOGO"> */}
                         <h2>LOGO</h2>
                     </div>
@@ -38,14 +38,15 @@ export class AppHeader extends Component {
                             <span className="close-menu-btn" onClick={() => this.toggleMenu()}>
                                 <FontAwesomeIcon icon="fa-light fa-circle-x" />
                             </span>
+                            
                             {links.map((link, idx) => {
                                 return (
                                     <li
                                         key={link.id}
                                         className={`header-link 
-                                        ${this.state.currPageIdx === idx ? 'active' : ''} 
+                                        ${currPageIdx === idx ? 'active' : ''} 
                                         ${link.title === 'Login' && this.state.loggedInUser ? 'hide' : ''}`}
-                                        onClick={() => this.setActive(idx)}
+                                        onClick={() => this.onSetPageIdx(idx)}
                                     >
                                         {link.title}
                                     </li>

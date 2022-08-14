@@ -37,13 +37,18 @@ function getHeaderLinks() {
     },
     {
       id: makeId(),
-      path: '/list',
-      title: 'List',
+      path: '/',
+      title: 'Contacts',
     },
     {
       id: makeId(),
-      path: '/about',
-      title: 'About',
+      path: '/',
+      title: 'Details',
+    },
+    {
+      id: makeId(),
+      path: '/',
+      title: 'Statistics',
     },
     {
       id: makeId(),
