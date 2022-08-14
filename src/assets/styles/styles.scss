@@ -9,17 +9,19 @@
 @import 'basic/helpers';
 @import 'basic/layout';
 
-//Views
-@import 'views/list';
-@import 'views/details';
-@import 'views/edit';
+//Pages
+@import 'pages/contact-page';
+@import 'pages/details';
+@import 'pages/edit';
+@import 'pages/login';
 
 
 // Components
 @import 'cmps/app-header';
 @import 'cmps/app-footer';
-@import 'cmps/item-preview';
-@import 'cmps/item-edit-form';
 @import 'cmps/back-btn';
+@import 'cmps/contact-list';
+@import 'cmps/contact-preview';
+@import 'cmps/contact-filter';
 
 

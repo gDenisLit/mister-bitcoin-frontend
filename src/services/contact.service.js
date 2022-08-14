@@ -132,10 +132,11 @@ function sort(arr) {
     })
 }
 
-function getContacts(filterBy = null) {
+function getContacts(filterBy = null) { 
     return new Promise((resolve, reject) => {
         var contactsToReturn = contacts
         if (filterBy && filterBy.term) {
+            console.log('service', filterBy)
             contactsToReturn = filter(filterBy.term)
         }
         resolve(sort(contactsToReturn))

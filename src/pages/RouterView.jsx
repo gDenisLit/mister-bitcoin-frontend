@@ -3,6 +3,7 @@ import { HomePage } from './HomePage'
 import { ContactPage } from './ContactPage'
 import { ContactDetailsPage } from './ContactDetailsPage'
 import { StatisticPage } from './StatisticPage'
+import { LoginPage } from './LoginPage'
 
 export class RouterView extends Component {
 
@@ -10,9 +11,10 @@ export class RouterView extends Component {
         <HomePage />,
         <ContactPage />,
         <ContactDetailsPage />,
-        <StatisticPage />
+        <StatisticPage />,
+        <LoginPage />
     ]
-    
+
     render() {
         const { currPageIdx } = this.props
         return this.pages[currPageIdx]

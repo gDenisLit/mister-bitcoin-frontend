@@ -1,0 +1,12 @@
+.contact-preview {
+    background-color: $light-color4;
+    width: rem(300px);
+    padding: rem(10px);
+    
+    img {
+        max-width: rem(50px);
+        border-radius: 50%;
+        background-color: $light-color;
+        margin-inline-end: rem(10px);
+    }
+}
