@@ -12,7 +12,7 @@ export class RouterView extends Component {
         <ContactPage />,
         <ContactDetailsPage />,
         <StatisticPage />,
-        <LoginPage />
+        <LoginPage onLogin={this.props.onLogin}/>
     ]
 
     render() {

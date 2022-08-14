@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export class AppHeader extends Component {
 
     state = {
-        loggedInUser: null,
         isMenuOpen: false
     }
 
@@ -45,7 +44,7 @@ export class AppHeader extends Component {
                                         key={link.id}
                                         className={`header-link 
                                         ${currPageIdx === idx ? 'active' : ''} 
-                                        ${link.title === 'Login' && this.state.loggedInUser ? 'hide' : ''}`}
+                                        ${link.title === 'Login' && this.props.loggedInUser ? 'hide' : ''}`}
                                         onClick={() => this.onSetPageIdx(idx)}
                                     >
                                         {link.title}
