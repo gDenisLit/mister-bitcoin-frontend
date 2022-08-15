@@ -15,7 +15,7 @@ export class ContactFilter extends Component {
 
     render() {
         return (
-            <form className='contact-filter flex '>
+            <form className='contact-filter flex'>
                 <input
                     type="search"
                     onChange={this.handleChange}

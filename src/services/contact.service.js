@@ -8,6 +8,12 @@ export const contactService = {
 
 const contacts = [
     {
+        "_id": "5a56640269f443a5d64b32ce",
+        "name": "Denis Lit",
+        "email": "denislit@gmail.com",
+        "phone": "+1 (968) 594-3844"
+    },
+    {
         "_id": "5a56640269f443a5d64b32ca",
         "name": "Ochoa Hyde",
         "email": "ochoahyde@renovize.com",

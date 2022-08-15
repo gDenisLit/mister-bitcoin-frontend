@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import { userService } from '../services/user.service'
+import { LoginForm } from '../cmps/login/LoginForm'
+import { Link } from 'react-router-dom'
 
 export class LoginPage extends Component {
 
@@ -12,10 +14,7 @@ export class LoginPage extends Component {
         ev.preventDefault()
         try {
             const user = await userService.login(this.state)
-            if (user) {
-                this.props.onLogin(user)
-                window.location.reload()
-            }
+            if (user) this.props.history.push('/#')
         } catch (err) { console.log('Wrong credentials') }
     }
 
@@ -25,25 +24,18 @@ export class LoginPage extends Component {
     }
 
     render() {
+        const main = "login main-layout full"
+        const inner = "login__inner flex-column-center"
+        const Signup = () => <Link to='/signup'>Don't have an account?</Link>
+
         return (
-            <section className="login main-layout full">
-                <div className="login__inner">
-                    <form onSubmit={this.handleSubmit} className="login-form">
-                        <h2>Log in</h2>
-                        <input
-                            type="email" placeholder="Email"
-                            autoFocus name="email" onInput={this.handleChange}
-                        />
-                        <input
-                            type="password" placeholder="Password"
-                            show-password="true" name="password"
-                            onInput={this.handleChange}
-                        />
-                        <button className="login__btn">
-                            <span>Login</span>
-                        </button>
-                    </form>
-                    <p>Don't have an account?</p>
+            <section className={main}>
+                <div className={inner}>
+                    <LoginForm
+                        handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
+                    />
+                    <Signup />
                 </div>
             </section>
         )

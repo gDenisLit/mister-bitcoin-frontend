@@ -27,6 +27,19 @@
   justify-content: space-between;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 // List
 .clean-list {
   list-style-type: none;

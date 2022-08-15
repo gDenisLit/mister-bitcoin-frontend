@@ -1,7 +1,7 @@
 import { Component } from 'react'
-import { ContactList } from '../cmps/ContactList'
+import { ContactList } from '../cmps/contact/ContactList'
 import { contactService } from '../services/contact.service'
-import { ContactFilter } from '../cmps/ContactFilter'
+import { ContactFilter } from '../cmps/contact/ContactFilter'
 
 export class ContactPage extends Component {
 
@@ -15,8 +15,9 @@ export class ContactPage extends Component {
     }
 
     async loadContacts() {
+        const { filterBy } = this.state
         try {
-            const contacts = await contactService.getContacts(this.state.filterBy)
+            const contacts = await contactService.getContacts(filterBy)
             this.setState({ contacts })
         } catch (err) { console.dir(err) }
     }
@@ -29,11 +30,14 @@ export class ContactPage extends Component {
         const { contacts } = this.state
         if (!contacts) return <div>Loading...</div>
 
+        const main = 'contact-page main-layout full'
+        const inner = 'contact-page__inner flex-column-center'
+        
         return (
-            <section className='contact-page main-layout full'>
-                <div className='contact-page__inner flex  flex-column justify-center items-center'>
+            <section className={main}>
+                <div className={inner}>
                     <div className='container'>
-                        <h1>Find your contacts</h1>
+                        <h3>Find someone to trade with</h3>
                         <ContactFilter onSearch={this.onSearch} />
                         <ContactList contacts={contacts} />
                     </div>

@@ -56,6 +56,8 @@ async function _createUsers() {
       const contacts = await contactService.getContacts()
       users = contacts.map(contact => {
         contact.password = '123'
+        contact.coins = 100
+        contact.moves = []
         return contact
       })
     } catch (err) {console.dir(err)}
