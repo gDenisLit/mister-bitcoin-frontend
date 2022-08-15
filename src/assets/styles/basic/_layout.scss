@@ -11,27 +11,27 @@
     }
 
     @include for-small-layout {
-        grid-template-columns: 1fr 600px 1fr;
+        grid-template-columns: 220px 600px 1fr;
     }
 
     @include for-medium-layout {
-        grid-template-columns: 1fr 800px 1fr;
+        grid-template-columns: 220px 800px 1fr;
     }
 
     @include for-narrow-layout {
-        grid-template-columns: 1fr 980px 1fr;
+        grid-template-columns: 220px 980px 1fr;
     }
 
     @include for-normal-layout {
-        grid-template-columns: 1fr 1380px 1fr;
+        grid-template-columns: 220px 1380px 1fr;
     }
 
     @include for-wide-layout {
-        grid-template-columns: 1fr 1600px 1fr;
+        grid-template-columns: 220px 1600px 1fr;
     }
 
     @include for-ultra-wide-layout {
-        grid-template-columns: 1fr 1900px 1fr;
+        grid-template-columns: 220px 1900px 1fr;
     }
 }
 

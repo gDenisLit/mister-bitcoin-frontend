@@ -35,8 +35,8 @@ class _AppHeader extends Component {
     render() {
         const { loggedInUser, isMenuOpen } = this.state
         const links = utilService.getHeaderLinks()
-        const main = "app-header main-layout full"
-        const inner = "app-header__inner flex justify-between items-center"
+        const main = "app-header"
+        const inner = "app-header__inner flex items-center"
 
         return (
             <header className={main}>

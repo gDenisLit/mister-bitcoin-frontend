@@ -33,17 +33,20 @@ function getHeaderLinks() {
     {
       id: makeId(),
       path: '/',
-      title: 'Home',
+      title: 'Dashboard',
+      icon: 'fa-light fa-house'
     },
     {
       id: makeId(),
       path: '/contact',
       title: 'Contacts',
+      icon: "fa-light fa-address-card" 
     },
     {
       id: makeId(),
       path: '/statistic',
       title: 'Statistics',
+      icon: 'fa-light fa-chart-area'
     },
   ]
 }
