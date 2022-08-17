@@ -1,18 +1,27 @@
 import { Component } from 'react'
 import { BtcDailyChart } from '../cmps/charts/BtcDailyChart'
 import { CardList } from "../cmps/home/CardList"
+import { UserBalance } from '../cmps/home/UserBalance'
 import { bitcoinService } from '../services/bitcoin.service'
+import { userService } from '../services/user.service'
 
 export class HomePage extends Component {
 
     state = {
         btcCurrPrice: null,
         btcChartData: null,
+        loggedInUser: null,
     }
 
     componentDidMount() {
         this.getCurrPrice()
         this.getChartData()
+        this.loadUser()
+    }
+
+    loadUser() {
+        const loggedInUser = userService.getLoggedinUser()
+        if (loggedInUser) this.setState({ loggedInUser })
     }
 
     getCurrPrice = async () => {
@@ -32,6 +41,7 @@ export class HomePage extends Component {
     render() {
         const chartData = this.state.btcChartData
         const priceData = this.state.btcCurrPrice
+        const { loggedInUser } = this.state
         if (!chartData || !priceData) return <div>Loading...</div>
 
         const main = 'home main-layout full'
@@ -40,7 +50,10 @@ export class HomePage extends Component {
         return (
             <section className={main}>
                 <div className={inner}>
-                    <h1>Overview</h1>
+                    <div className='heading'>
+                        <h1>Overview</h1>
+                        <UserBalance loggedInUser={loggedInUser} />
+                    </div>
                     <div className='container'>
                         <BtcDailyChart chartData={chartData} />
                         <CardList priceData={priceData} />
