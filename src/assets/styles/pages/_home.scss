@@ -1,0 +1,15 @@
+.home {
+
+    &__inner {
+       
+        h1 {
+            margin-block-end: rem(20px);
+            font-size: rem(28px);
+        }
+        
+        .container {
+            display: flex;
+            // background-color: blue;
+        }
+    }
+}

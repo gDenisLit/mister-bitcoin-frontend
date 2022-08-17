@@ -8,7 +8,10 @@ export function ContactPreview({ contact }) {
             <img src={imgUrl} alt="" />
             <div className='flex flex-column'>
                 <h2>{contact.name}</h2>
-                <Link to={`/contact/${contact._id}`}>View profile</Link>
+                <Link to={`/contact/${contact._id}`}
+                    className={'link-details'}
+                >View profile
+                </Link>
             </div>
         </>
     )

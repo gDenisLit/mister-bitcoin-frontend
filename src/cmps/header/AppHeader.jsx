@@ -5,6 +5,7 @@ import { AppHeaderNav } from './AppHeaderNav'
 import { Hamburger } from './AppHeaderMobile'
 import { userService } from '../../services/user.service'
 import { withRouter } from 'react-router-dom'
+import { AppHeaderLogin } from './AppHeaderLogin'
 
 class _AppHeader extends Component {
 
@@ -36,7 +37,7 @@ class _AppHeader extends Component {
         const { loggedInUser, isMenuOpen } = this.state
         const links = utilService.getHeaderLinks()
         const main = "app-header"
-        const inner = "app-header__inner flex items-center"
+        const inner = "app-header__inner flex items-center justify-between"
 
         return (
             <header className={main}>
@@ -48,6 +49,7 @@ class _AppHeader extends Component {
                         loggedInUser={loggedInUser}
                         toggleMenu={this.toggleMenu}
                     />
+                     <AppHeaderLogin loggedInUser={loggedInUser} />
                     <Hamburger
                         toggleMenu={this.toggleMenu}
                     />

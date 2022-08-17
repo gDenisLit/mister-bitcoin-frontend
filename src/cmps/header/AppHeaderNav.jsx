@@ -24,7 +24,7 @@ export function AppHeaderNav({ links, isMenuOpen, toggleMenu, loggedInUser }) {
                     </NavLink>
                 )
             })}
-            <AppHeaderLogin loggedInUser={loggedInUser} />
+           
         </nav >
     )
 }
